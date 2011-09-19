@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #bemdecl.js
-bem create block $page -t bemdecl.js -l pages
+bem create block $1 -t bemdecl.js -l pages
 
 #deps.js
 bem build -d pages/$1/$1.bemdecl.js -t deps.js.js -o pages/$1 -n $1 -l blocks -l pages/$1/blocks
