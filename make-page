@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#bemdecl.js
+bem create block $page -t bemdecl.js -l pages
+
+#deps.js
+bem build -d pages/$1/$1.bemdecl.js -t deps.js.js -o pages/$1 -n $1 -l blocks -l pages/$1/blocks
+
+#php
+bem build -d pages/$1/$1.deps.js -t techs/php.js -o ../wp-content/themes/yac -n $1 -l blocks -l pages/$1/blocks
+
+#css
+bem build -d pages/$1/$1.deps.js -t css.js -o ../wp-content/themes/yac -n __style -l blocks -l pages/$1/blocks 
+
+#ie.css
+bem build -d pages/$1/$1.deps.js -t ie.css.js -o ../wp-content/themes/yac -n __style -l blocks -l pages/$1/blocks
+
+#js
+bem build -d pages/$1/$1.deps.js -t js.js -o ../wp-content/themes/yac -n _script -l blocks -l pages/$1/blocks
+
+#borschik
+borschik -t css -i ../wp-content/themes/yac/__style.css -o ../wp-content/themes/yac/_style.css
+borschik -t css -i ../wp-content/themes/yac/__style.ie.css -o ../wp-content/themes/yac/_style.ie.css
+
+#csso
+csso -i ../wp-content/themes/yac/_style.css -o ../wp-content/themes/yac/style.css
+csso -i ../wp-content/themes/yac/_style.ie.css -o ../wp-content/themes/yac/style.ie.css
+
+#uglify-js
+uglifyjs ../wp-content/themes/yac/_script.js -o ../wp-content/themes/yac/script.js
