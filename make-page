@@ -7,7 +7,7 @@ bem create block $1 -t bemdecl.js -l pages
 bem build -d pages/$1/$1.bemdecl.js -t deps.js.js -o pages/$1 -n $1 -l blocks -l pages/$1/blocks
 
 #php
-bem build -d pages/$1/$1.deps.js -t techs/php.js -o ../wp-content/themes/yac -n $1 -l blocks -l pages/$1/blocks
+bem build -d pages/$1/$1.deps.js -t bem/techs/php.js -o ../wp-content/themes/yac -n $1 -l blocks -l pages/$1/blocks
 
 #css
 bem build -d pages/$1/$1.deps.js -t css.js -o ../wp-content/themes/yac -n __style -l blocks -l pages/$1/blocks 
