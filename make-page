@@ -19,7 +19,7 @@ bem build -d pages/$1/$1.deps.js -t ie.css -o ../wp-content/themes/yac -n __styl
 bem build -d pages/$1/$1.deps.js -t js -o ../wp-content/themes/yac -n _script -l blocks -l pages/$1/blocks
 
 #borschik
-borschik -t css -i /Users/tadatuta/Sites/wordpress.yac/wp-content/themes/yac/__style.css -o ../wp-content/themes/yac/_style.css
+borschik -t css -i ../wp-content/themes/yac/__style.css -o ../wp-content/themes/yac/_style.css
 borschik -t css -i ../wp-content/themes/yac/__style.ie.css -o ../wp-content/themes/yac/_style.ie.css
 
 #csso
